@@ -1,0 +1,102 @@
+Power BI DAX measures
+---------------------
+
+Create these measures after importing the five tables and setting the relationships in POWER_BI_BUILD_GUIDE.txt.
+
+-- Helper logic: TREATAS applies paid order IDs to the Orders table.
+Total Revenue =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+RETURN
+    CALCULATE(
+        SUM(order_items[line_total]),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+
+Total Orders =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+RETURN
+    CALCULATE(
+        DISTINCTCOUNT(orders[order_id]),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+
+Units Sold =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+RETURN
+    CALCULATE(
+        SUM(order_items[quantity]),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+
+Average Order Value =
+DIVIDE([Total Revenue], [Total Orders], 0)
+
+Active Customers =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+RETURN
+    CALCULATE(
+        DISTINCTCOUNT(orders[customer_id]),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+
+Repeat Customers =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+VAR CustomerOrderCounts =
+    CALCULATETABLE(
+        SUMMARIZE(
+            orders,
+            orders[customer_id],
+            "PurchaseCount", DISTINCTCOUNT(orders[order_id])
+        ),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+RETURN
+    COUNTROWS(FILTER(CustomerOrderCounts, [PurchaseCount] > 1))
+
+Repeat Purchase Rate =
+DIVIDE([Repeat Customers], [Active Customers], 0)
+
+Estimated Gross Profit =
+VAR PaidDeliveredOrderIDs =
+    CALCULATETABLE(
+        VALUES(payments[order_id]),
+        payments[payment_status] = "Paid"
+    )
+RETURN
+    CALCULATE(
+        SUMX(
+            order_items,
+            order_items[line_total] -
+            order_items[quantity] * RELATED(products[cost_price])
+        ),
+        orders[order_status] = "Delivered",
+        TREATAS(PaidDeliveredOrderIDs, orders[order_id])
+    )
+
+Estimated Profit Margin =
+DIVIDE([Estimated Gross Profit], [Total Revenue], 0)

@@ -1,0 +1,51 @@
+product_id,product_name,category,unit_price,cost_price
+P001,Classic T-Shirt 1,Electronics,16366.89,12485.82
+P002,Smart Lamp 2,Home & Kitchen,21712.77,2238.51
+P003,Ultra Backpack 3,Sports,11455.64,8623.02
+P004,Classic Yoga Mat 4,Sports,6345.42,5393.61
+P005,Pro Skincare Kit 5,Home & Kitchen,6068.23,5158.0
+P006,Premium Yoga Mat 6,Beauty,18700.15,7457.97
+P007,Classic Yoga Mat 7,Sports,20449.91,6222.31
+P008,Smart Lamp 8,Fashion,2809.9,2388.42
+P009,Pro Skincare Kit 9,Sports,1849.66,1572.21
+P010,Classic Headphones 10,Electronics,14940.95,2321.46
+P011,Smart Skincare Kit 11,Electronics,3824.1,3250.48
+P012,Classic Novel 12,Home & Kitchen,20650.67,6727.96
+P013,Ultra Blender 13,Beauty,7895.3,3797.09
+P014,Smart Blender 14,Books,3767.02,3201.97
+P015,Pro Yoga Mat 15,Books,23039.07,5925.01
+P016,Smart Blender 16,Beauty,4304.19,3658.56
+P017,Smart Watch 17,Sports,7260.06,6132.86
+P018,Ultra Lamp 18,Beauty,4008.61,3407.32
+P019,Classic Skincare Kit 19,Beauty,3063.15,2603.68
+P020,Pro Headphones 20,Sports,723.47,614.95
+P021,Pro Blender 21,Electronics,1572.81,1336.89
+P022,Ultra Yoga Mat 22,Fashion,4530.11,3850.59
+P023,Classic Lamp 23,Home & Kitchen,1522.87,1294.44
+P024,Eco T-Shirt 24,Books,14859.37,8612.95
+P025,Pro Blender 25,Electronics,17080.72,13591.96
+P026,Pro Lamp 26,Beauty,9961.04,8466.88
+P027,Eco Lamp 27,Beauty,8085.18,6872.4
+P028,Ultra Backpack 28,Books,12711.25,8569.82
+P029,Premium T-Shirt 29,Sports,21899.12,10163.02
+P030,Smart Blender 30,Home & Kitchen,21307.06,4680.96
+P031,Eco Novel 31,Fashion,1277.18,1085.6
+P032,Eco Novel 32,Sports,4700.16,3317.44
+P033,Smart Backpack 33,Books,6070.27,5159.73
+P034,Classic Yoga Mat 34,Sports,6383.81,5426.24
+P035,Premium Speaker 35,Fashion,14365.57,2199.57
+P036,Classic Yoga Mat 36,Fashion,10522.31,8943.96
+P037,Premium T-Shirt 37,Beauty,1420.5,1207.42
+P038,Premium T-Shirt 38,Sports,9464.63,8044.94
+P039,Eco Blender 39,Electronics,13188.07,1442.53
+P040,Ultra Yoga Mat 40,Electronics,2720.46,2312.39
+P041,Smart Lamp 41,Sports,20868.77,2283.92
+P042,Ultra Lamp 42,Fashion,1487.65,1264.5
+P043,Ultra T-Shirt 43,Home & Kitchen,23135.08,12833.86
+P044,Pro Novel 44,Fashion,2657.01,2258.46
+P045,Classic Backpack 45,Fashion,21119.66,12543.51
+P046,Premium Blender 46,Home & Kitchen,22584.8,12742.12
+P047,Classic Novel 47,Books,24492.35,15141.78
+P048,Premium T-Shirt 48,Fashion,20089.24,4128.05
+P049,Premium Blender 49,Home & Kitchen,19530.04,9481.8
+P050,Premium Yoga Mat 50,Sports,16132.59,1610.38
